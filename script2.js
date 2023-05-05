@@ -123,3 +123,54 @@ const three = totalIntegers([[1, 2, 4], ["foo"], [3]]);
 console.log(three);
 const seven = totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7
 console.log(seven);
+
+// Question 8:
+// Write a function that sums squares of numbers in list
+// that may contain more lists
+
+function sumSquares(array) {
+	if (array.length === 0) return 0;
+	let total = 0;
+
+	for(let i = 0; i < array.length; i++) {
+		if(Array.isArray(array[i])) {
+			total += sumSquares(array[i]);
+		} else {
+			total += array[i] * array[i];
+		}
+	}
+	return total;
+};
+
+
+let l = [1,2,3];
+console.log(Array.isArray(l[0]));
+console.log(Array.isArray(l[1]));
+console.log(l.length);
+console.log(sumSquares(l)); // 1 + 4 + 9 = 14
+
+
+l = [[1,2],3]; 
+console.log(sumSquares(l)); // 1 + 4 + 9 = 14
+
+l = [[[[[[[[[1]]]]]]]]] 
+console.log(sumSquares(l)); // 1 = 1
+
+l = [10,[[10],10],[10]] 
+console.log(sumSquares(l)); // 100 + 100 + 100 + 100 = 400
+
+
+// Question 9:
+// The function should return an array containing repetitions
+// of the number argument. For instance, replicate(3, 5) should return
+// [5,5,5]. If the times argument is negative, return an empty array.
+
+function replicate(repetitions, number) {
+	if (repetitions <= 0) return [];
+	return [number].concat(replicate(repetitions - 1, number));
+}
+
+
+console.log(replicate(3, 5)) // [5, 5, 5]
+console.log(replicate(1, 69)) // [69]
+console.log(replicate(-2, 6)) // []
