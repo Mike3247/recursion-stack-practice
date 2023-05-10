@@ -31,4 +31,4 @@ const fibRecursive = (n, a = [0, 1]) => {
   console.log(fibRecursive(3));
   console.log(fibRecursive(8));
   console.log(fibRecursive(10));
-
+  
