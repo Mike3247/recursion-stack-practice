@@ -47,7 +47,7 @@ console.log(mergeSortRec([])) // []
 console.log(mergeSortRec([10, 7, 8, 9, 1, 5])); // [1, 5, 7, 8, 9, 10]
 console.log(mergeSortRec([30, 20, 10, 50, 22, 33, 55])); // [10, 20, 22, 30, 33, 50, 55]
 
-// solution from 'fcasibu':
+// solution from 'fcasibu' in github (nevz in theodinproject):
 
 function mergeSort(a) {
     if (a.length === 1) return a;

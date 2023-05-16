@@ -8,16 +8,17 @@
 // using iteration:
 
 const fibIterative = (n) => {
-    const result = [0, 1];
+    const result = [0 , 1];
   
     while (result.length < n) {
       result.push(result[result.length - 2] + result[result.length - 1]);
     }
-  
+
     return result;
   };
 
   console.log(fibIterative(3));
+  console.log(fibIterative(4));
   console.log(fibIterative(8));
 
 
