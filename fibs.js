@@ -11,22 +11,52 @@
 // a requirement… just get it done).
 
 function fibsIterative(number) {
-    const fibsArray = [];
-
-    for (let i = 0; i <= number; i++) {
-        if (i === 0) fibsArray.push(0);
-        if (i === 1) fibsArray.push(1);
-        // if (fibsArray.length fibsArray.push(1);
-        //              fibsArray.push(2);
-        
+    let fibsArray = [];
+    if (number === 0) return [];
+    if (number === 1) return [0];
+    if (number === 2) return [0, 1]
+    fibsArray = [0, 1];
+    
+    for (let i = 2; i < number; i++) {
+        fibsArray.push(fibsArray[i-2] + fibsArray[i-1]);
     }
     return fibsArray;
 };
 
 console.log(fibsIterative(0));
 console.log(fibsIterative(1));
-// console.log(fibsIterative(2));
+console.log(fibsIterative(2));
+console.log(fibsIterative(3));
+console.log(fibsIterative(4));
+console.log(fibsIterative(5));
+console.log(fibsIterative(6));
+console.log(fibsIterative(7));
+console.log(fibsIterative(8));
 
 // console.log(fibsIterative(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
 
 // console.log(fibsRecursive(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
+
+// from luaroxy on github from theodinproject.com
+
+// function fibs(n){
+//     if (n === 1) return [0];
+//     if (n === 2) return [0,1];
+//     const fib=[0,1];
+
+//     for (i=2; i<n; i++){
+//         fib[i] = fib[i-1]+fib[i-2];
+//     }
+
+//     return fib;
+// }
+
+// function fibsRec(n){
+//     if (n === 1) return [0];
+//     if (n === 2) return [0,1];
+
+//     return [...fibsRec(n-1), fibsRec(n-1)[n - 2] + fibsRec(n-1)[n - 3]];
+// }
+
+// console.log(fibs(8));
+// console.log(fibsRec(8));
