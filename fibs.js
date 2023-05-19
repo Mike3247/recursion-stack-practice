@@ -14,7 +14,7 @@ function fibsIterative(number) {
     let fibsArray = [];
     if (number === 0) return [];
     if (number === 1) return [0];
-    if (number === 2) return [0, 1]
+    if (number === 2) return [0, 1];
     fibsArray = [0, 1];
     
     for (let i = 2; i < number; i++) {
@@ -31,11 +31,32 @@ console.log(fibsIterative(4));
 console.log(fibsIterative(5));
 console.log(fibsIterative(6));
 console.log(fibsIterative(7));
-console.log(fibsIterative(8));
+console.log(fibsIterative(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
 
-// console.log(fibsIterative(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
 
-// console.log(fibsRecursive(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
+function fibsRecursive(n) {
+    if (n === 0) return [];
+    if (n === 1) return [0];
+    if (n === 2) return [0, 1];
+
+    return [...fibsRecursive(n-1), fibsRecursive(n-1)[n-2] + fibsRecursive(n-1)[n-3]]
+
+}
+
+console.log(fibsRecursive(0));
+console.log(fibsRecursive(1));
+console.log(fibsRecursive(2));
+console.log(fibsRecursive(3));
+console.log(fibsRecursive(4));
+console.log(fibsRecursive(5));
+console.log(fibsRecursive(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
+
+// return [0, 1, 1, 2]
+// return [0, 1, 1, 2, 3]
+
+// const testArray = [4, 9, 14];
+
+// console.log(testArray[0]);
 
 // from luaroxy on github from theodinproject.com
 
