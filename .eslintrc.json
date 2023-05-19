@@ -39,6 +39,9 @@
         ],
         "no-nested-ternary": [
             "off"
+        ],
+        "prefer-const": [
+            "off"
         ]
     }
 }
