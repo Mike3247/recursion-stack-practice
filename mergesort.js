@@ -21,7 +21,7 @@ function mergeSort (arr) {
 	return merge(mergeSort(left), mergeSort(right));
 };
 
-const merge = (leftArr, rightArr) => {
+function merge (leftArr, rightArr) {
 	// to merge both incoming arrays
 	const result = [];
 
@@ -59,7 +59,8 @@ const threeValuesArray = [4, 3, 2];
 // rightArr[0] = 3;
 // result = [3]
 // iL = 0; iR = 1;
-// 
+// result = [3, 4]; iL = 1;
+// result = [3, 4, 2]; iR = 2;
 
 
 
