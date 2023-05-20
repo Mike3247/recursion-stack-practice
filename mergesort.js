@@ -18,7 +18,7 @@ function mergeSort (arr) {
 	const left = arr.slice(0, mid);
 	const right = arr.slice(mid, arr.length);
 
-	return merge(mergeSortRecursive(left), mergeSortRecursive(right));
+	return merge(mergeSort(left), mergeSort(right));
 };
 
 const merge = (leftArr, rightArr) => {
@@ -27,12 +27,52 @@ const merge = (leftArr, rightArr) => {
 
 	let iL = 0;
 	let iR = 0;
-}
+
+	while (iL < leftArr.length && iR < rightArr.length) {
+		if (leftArr[iL] < rightArr[iR]) {
+			result.push(leftArr[iL]);
+			iL++;
+		} else {
+			result.push(rightArr[iR]);
+			iR++;
+		}
+	}
+		while (iL < leftArr.length) {
+		result.push(leftArr[iL]);
+		iL++;
+	}
+		while (iR < rightArr.length) {
+		result.push(rightArr[iR]);
+		iR++;
+	}
+
+	return result;
+};
+
+const emptyArray = [];
+const singleValueArray = [5];
+const twoValuesArray = [3, 2];
+const threeValuesArray = [4, 3, 2];
+// left = [4];
+// right = [3, 2];
+// leftArr[0] = 4;
+// rightArr[0] = 3;
+// result = [3]
+// iL = 0; iR = 1;
+// 
+
 
 
 const arrayToSort = [5, 9, 6, 4, 3, 0, 2, 7, 5, 4];
 const arrayForTests = [1, 2, 3, 4, 5];
 console.log(Math.floor(arrayForTests.length/2));
+console.log(Math.floor(threeValuesArray.length/2));
+console.log(mergeSort(emptyArray));
+console.log(mergeSort(singleValueArray));
+console.log(mergeSort(twoValuesArray));
+// case studying
+console.log(mergeSort(threeValuesArray));
+// this ^
 console.log(mergeSort(arrayToSort));
 
 
