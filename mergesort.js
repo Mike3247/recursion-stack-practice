@@ -37,10 +37,10 @@ function merge (leftArr, rightArr) {
 			iR++;
 		}
 	}
-		while (iL < leftArr.length) {
-		result.push(leftArr[iL]);
-		iL++;
-	}
+		while (iL < leftArr.length) { // does at least 1 value
+		result.push(leftArr[iL]);     // remains unpushed from
+		iL++;						  // leftArr ? if yes, then 
+	}								  // add the next value of leftArr to result
 		while (iR < rightArr.length) {
 		result.push(rightArr[iR]);
 		iR++;
@@ -63,6 +63,16 @@ const threeValuesArray = [4, 3, 2];
 // result = [3, 4, 2]; iR = 2;
 
 
+const fourValuesArray = [4, 3, 7, 5];
+console.log(Math.floor(fourValuesArray.length/2));
+// left = [4, 3]; right = [7, 5];
+// leftArray.length = 2; rightArray.length = 2;
+// leftArr[0] = 4; rightArr[0] = 7;
+// result = [4], iL = 1;
+// result = [4, 3], iL = 2;
+// result = [4, 3, 7], iR = 1; result = [4, 3, 7, 5], iR = 2;
+
+
 
 const arrayToSort = [5, 9, 6, 4, 3, 0, 2, 7, 5, 4];
 const arrayForTests = [1, 2, 3, 4, 5];
@@ -71,10 +81,14 @@ console.log(Math.floor(threeValuesArray.length/2));
 console.log(mergeSort(emptyArray));
 console.log(mergeSort(singleValueArray));
 console.log(mergeSort(twoValuesArray));
-// case studying
+
 console.log(mergeSort(threeValuesArray));
+
+// case studying
+console.log(mergeSort(fourValuesArray));
 // this ^
 console.log(mergeSort(arrayToSort));
+
 
 
 
